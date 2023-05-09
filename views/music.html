@@ -1,0 +1,50 @@
+<div id="header" class="container-fluid p-0">
+    <img class="img-fluid w-100" src="img/photography/brennan-white-w-guitar_horizontal.jpeg"
+         style="max-height: 550px; object-fit: cover;">
+</div>
+
+<div id="short-fiction" class="d-md-flex flex-md-equal">
+    <div class="py-3 px-3 py-md-5 px-md-5 text-center overflow-hidden container bb-1">
+        <div class="row my-3 py-3" ng-repeat="a in albums">
+            <div class="col-12 pb-3" align="left">
+                <h2>{{a.name}}</h2>
+                <h4>{{a.year}}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 pb-3">
+                <img src="{{a.image}}" class="grow rounded w-100 shadow">
+            </div>
+            <div id="spotify-player" class="col-sm-12 col-md-12 col-lg-4 pb-3" ng-show="{{a.spotifyEmbedUrl}}">
+                <iframe style="border-radius:12px"
+                        src="{{a.spotifyEmbedUrl}}" width="100%"
+                        height="100%" frameBorder="0" allowfullscreen=""
+                        allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+            </div>
+            <div id="apple-music-player" class="col-sm-12 col-md-12 col-lg-4 pb-3" ng-show="{{a.appleMusicEmbedUrl}}">
+                <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0"
+                        height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;"
+                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                        src="{{a.appleMusicEmbedUrl}}"></iframe>
+            </div>
+            <div class="col-12 pt-3" align="left"
+                 ng-hide="a.soundCloudUrl === undefined && a.amazonMusicUrl === undefined && a.tidalUrl === undefined && a.bandcampUrl === undefined && a.youTubeMusicUrl === undefined">
+                <h4 class="mb-0">Also available on</h4>
+                <div id="links" class="disc-links">
+                    <a ng-show="{{a.youTubeMusicUrl}}" href="{{a.youTubeMusicUrl}}" target="_blank" class="p-2"
+                       title="YouTube Music" ng-click="recordLinkClick('click-music-page', 'YouTube Music')"><i
+                            class="bi bi-youtube"></i></a>
+                    <a ng-show="{{a.amazonMusicUrl}}" href="{{a.amazonMusicUrl}}" target="_blank" title="Amazon Music"
+                       class="p-2" ng-click="recordLinkClick('click-music-page', 'Amazon Music')"><i
+                            class="fab fa-amazon"></i></a>
+                    <a ng-show="{{a.soundCloudUrl}}" href="{{a.soundCloudUrl}}" target="_blank" title="SoundCloud"
+                       class="p-2" ng-click="recordLinkClick('click-music-page', 'SoundCloud')"><i
+                            class="fab fa-soundcloud"></i></a>
+                    <a ng-show="{{a.bandcampUrl}}" href="{{a.bandcampUrl}}" target="_blank" title="Bandcamp" class="p-2"
+                       ng-click="recordLinkClick('click-music-page', 'Bandcamp')"><i
+                            class="fab fa-bandcamp"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

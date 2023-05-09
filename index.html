@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codetta South</title>
+    <meta name="description"
+          content="TODO: Add desc">
+    <link rel="canonical" href="https://www.thisisbrennanwhite.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Codetta South">
+    <meta property="og:url" content="https://www.thisisbrennanwhite.com/">
+    <meta property="og:title" content="Codetta South">
+    <meta property="og:description" content="TODO: Add desc">
+    <meta property="og:image" content="https://www.thisisbrennanwhite.com/img/photography/brennan-white_wideshot.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120-precomposed.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152-precomposed.png"/>
+    <link rel="icon" href="img/apple-touch-icon-152x152-precomposed.png"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Phudu:wght@500&family=Schibsted+Grotesk:wght@400;700&family=Slabo+27px&family=Ultra&family=Work+Sans&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body ng-app="codettaSouthApp">
+<div ng-controller="MainCtrl">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="img/codetta-south-logo.svg" alt="Codetta South" class="my-4">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <!--                <span class="navbar-toggler-icon"></span>-->
+                <i class="bi bi-list" style="font-size: 2.5rem;"></i>
+            </button>
+            <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">CODETTA SOUTH</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" ng-class="{active: $route.current.activePage === 'Services'}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/music"
+                               ng-class="{active: $route.current.activePage === 'Music'}">Music</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/video"
+                               ng-class="{active: $route.current.activePage === 'Video'}">Video</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/photography"
+                               ng-class="{active: $route.current.activePage === 'Photography'}">Photography</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{sendMail}}">Contact</a>
+                        </li>
+                        <!--                    <li class="nav-item dropdown">-->
+                        <!--                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+                        <!--                            Dropdown-->
+                        <!--                        </a>-->
+                        <!--                        <ul class="dropdown-menu">-->
+                        <!--                            <li><a class="dropdown-item" href="#">Action</a></li>-->
+                        <!--                            <li><a class="dropdown-item" href="#">Another action</a></li>-->
+                        <!--                            <li>-->
+                        <!--                                <hr class="dropdown-divider">-->
+                        <!--                            </li>-->
+                        <!--                            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                        <!--                        </ul>-->
+                        <!--                    </li>-->
+                    </ul>
+                    <h5 class="d-md-none d-sm-block pt-5">FOLLOW</h5>
+                    <ul class="d-md-none d-sm-block navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{instagramUrl}}" target="_blank">Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{youTubeUrl}}" target="_blank">YouTube</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{tikTokUrl}}" target="_blank">TikTok</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{facebookUrl}}" target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                    <!--                <form class="d-flex mt-3" role="search">-->
+                    <!--                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+                    <!--                    <button class="btn btn-outline-success" type="submit">Search</button>-->
+                    <!--                </form>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="floating-socials" class="d-none d-md-block position-fixed top-50 right-5 translate-middle">
+        <div class="row pt-2">
+            <a href="{{instagramUrl}}" target="_blank"><i class="bi bi-instagram social-chip"></i></a>
+        </div>
+        <div class="row pt-2">
+            <a href="{{youTubeUrl}}" target="_blank"><i class="bi bi-youtube social-chip"></i></a>
+        </div>
+        <div class="row pt-2">
+            <a href="{{tikTokUrl}}" target="_blank"><i class="bi bi-tiktok social-chip"></i></a>
+        </div>
+        <div class="row pt-2">
+            <a href="{{facebookUrl}}" target="_blank"><i class="bi bi-facebook social-chip"></i></a>
+        </div>
+        <div class="row pt-2">
+            <a href="{{sendMail}}" target="_blank"><i class="bi bi-envelope social-chip"></i></a>
+        </div>
+    </div>
+
+    <div ng-view="" autoscroll="true"></div>
+
+    <div id="footer" class="container text-center p-5">
+        <img src="img/codetta-south-record-guy.svg" alt="Codetta South" height="150" class="pb-3">
+        <small class="d-block text-muted">Brennan Michael White, Codetta South <i class="bi bi-c-circle"></i>
+            {{getCurrentYear()}}</small>
+    </div>
+
+</div>
+</body>
+</html>

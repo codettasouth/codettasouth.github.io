@@ -1,0 +1,37 @@
+<div class="container-fluid p-0">
+    <img class="img-fluid w-100" src="img/photography/brennan-white_closeup.jpeg"
+         style="max-height: 550px; object-fit: cover;">
+</div>
+
+<div id="about-me" class="container py-5 px-sm-5">
+    <h2>About Me</h2>
+    <p>I’m Brennan Michael White (Codetta South), a Nashville native with more than a decade of experience across the
+        music industry. Whether in a studio, on a stage, or in a classroom, my goal is always the same: I’m here to make
+        you sound better than you thought possible. Contact me today, and let’s get started.</p>
+</div>
+
+<div class="container pb-5 px-sm-5">
+    <h2>Services</h2>
+    <!-- TODO: Add examples of each. i.e. Links to songs he's mixed, videos for bookings, etc. -->
+    <div class="row">
+
+        <div ng-repeat="s in services" class="col-lg-3 col-md-6 col-sm-12 text-center p-3 d-flex align-items-stretch">
+            <div class="card shadow">
+                <!--                <img src="{{s.iconPath}}" class="card-img-top px-5 pb-2 pt-4">-->
+                <div class="card-body">
+                    <h5 class="card-title">{{s.title}}</h5>
+                    <!--            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>-->
+                    <p class="card-text">{{s.desc}}</p>
+                    <a href="{{s.link}}" class="card-link">{{s.linkTitle}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row py-4">
+        <div class="d-grid gap-md-2 col-md-6 col-sm-12 gap-sm-0 mx-auto">
+            <a class="btn btn-primary btn-lg" href="{{sendMail}}" role="button">Book a Session</a>
+        </div>
+    </div>
+
+</div>

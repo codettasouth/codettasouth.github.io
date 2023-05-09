@@ -1,0 +1,115 @@
+<div class="container">
+
+    <!-- Modal -->
+    <div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <!--                <div class="modal-header">-->
+                <!--                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>-->
+                <!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                <!--                </div>-->
+                <div class="modal-body">
+                    <button id="left-click" type="button"
+                            class="btn btn-light btn-round position-absolute top-50 translate-middle"><i
+                            class="bi bi-chevron-left"></i></button>
+                    <img id="lightbox-img" src="" alt="" class="w-100 h-100" style="object-fit: contain;">
+                    <button id="right-click" type="button"
+                            class="btn btn-light btn-round position-absolute top-50 translate-middle start-100"><i
+                            class="bi bi-chevron-right"></i></button>
+                </div>
+                <!--                <div class="modal-footer">-->
+                <!--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mb-md-4 mb-sm-0" ng-repeat="photoGroup in photoGalleryGroups">
+            <img ng-repeat="photo in photoGroup"
+                 src="{{photo.path}}"
+                 class="w-100 shadow-1-strong rounded mb-4 shadow"
+                 alt="{{photo.name}}"
+                 data-bs-toggle="modal" data-bs-target="#lightbox"
+                 data-bs-img-path="{{photo.path}}"
+            />
+        </div>
+    </div>
+
+    <!--    <div class="row">-->
+
+    <!--        <div class="col-lg-4 col-md-12 mb-md-4 mb-sm-0">-->
+    <!--            <img-->
+    <!--                    src="img/photography/home_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Home"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/home_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--            />-->
+
+    <!--            <img-->
+    <!--                    src="img/photography/window_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Window"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/window_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--            />-->
+
+    <!--            <img-->
+    <!--                    src="img/photography/brennan-white-w-guitar_horizontal.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Guitar"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/brennan-white-w-guitar_horizontal.jpeg"-->
+    <!--            />-->
+    <!--        </div>-->
+
+    <!--        <div class="col-lg-4 mb-md-4 mb-sm-0">-->
+    <!--            <img-->
+    <!--                    src="img/photography/motorcycle_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Motorcycle"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/motorcycle_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--            />-->
+
+    <!--            <img-->
+    <!--                    src="img/photography/brennan-white_wideshot.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Self Portrait"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/brennan-white_wideshot.jpeg"-->
+    <!--            />-->
+
+    <!--            <img-->
+    <!--                    src="img/photography/louise_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Louise"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/louise_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--            />-->
+    <!--        </div>-->
+
+    <!--        <div class="col-lg-4 mb-md-4 mb-sm-0">-->
+    <!--            <img-->
+    <!--                    src="img/photography/jordan_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Jordan"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/jordan_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--            />-->
+
+    <!--            <img-->
+    <!--                    src="img/photography/sky_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--                    class="w-100 shadow-1-strong rounded mb-4 shadow"-->
+    <!--                    alt="Sky"-->
+    <!--                    data-bs-toggle="modal" data-bs-target="#lightbox"-->
+    <!--                    data-bs-img-path="img/photography/sky_credit-Brennan-White-Codetta-South.jpeg"-->
+    <!--            />-->
+    <!--        </div>-->
+
+    <!--    </div>-->
+
+</div>
