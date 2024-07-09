@@ -42,7 +42,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $sce, $route) {
     // Social links
     $scope.facebookUrl = 'https://www.facebook.com/CodettaSouth/';
     $scope.instagramUrl = 'https://www.instagram.com/codettasouth/';
-    $scope.youTubeUrl = 'https://www.youtube.com/@codettasouth3028';
+    $scope.youTubeUrl = 'https://www.youtube.com/@codettasouth';
     $scope.tikTokUrl = 'https://www.tiktok.com/@codettasouth';
 
     // Featured Music Links
@@ -64,13 +64,13 @@ app.controller('MainCtrl', function ($scope, $rootScope, $sce, $route) {
             linkTitle: 'SEE EXAMPLES',
             link: '#'
         },
-        {
-            iconPath: 'img/mixing-board.svg',
-            title: 'Mixing',
-            desc: 'Choosing between quality and affordability? Choose both. I work with artists of all experience levels to create beautiful, radio-worthy mixes at rates that won’t kill their budget. Because great songs deserve great mixes.',
-            linkTitle: 'SEE EXAMPLES',
-            link: '#'
-        },
+        // {
+        //     iconPath: 'img/mixing-board.svg',
+        //     title: 'Mixing',
+        //     desc: 'Choosing between quality and affordability? Choose both. I work with artists of all experience levels to create beautiful, radio-worthy mixes at rates that won’t kill their budget. Because great songs deserve great mixes.',
+        //     linkTitle: 'SEE EXAMPLES',
+        //     link: '#'
+        // },
         {
             iconPath: 'img/producing.svg',
             title: 'Producing',
@@ -137,6 +137,30 @@ app.controller('MainCtrl', function ($scope, $rootScope, $sce, $route) {
 
     $scope.photoGallery = [
         {
+            name: 'Street Corner',
+            path: 'img/photography/bw_sbfl-102.jpg'
+        },
+        {
+            name: 'Tools',
+            path: 'img/photography/bw_sbfl-129.jpg'
+        },
+        {
+            name: 'Fondren Corner',
+            path: 'img/photography/bw_sbfl-110.jpg'
+        },
+        {
+            name: 'Wright House',
+            path: 'img/photography/bw_sbfl-147.jpg'
+        },
+        {
+            name: 'Oil',
+            path: 'img/photography/bw_sbfl-131.jpg'
+        },
+        {
+            name: 'Arizona',
+            path: 'img/photography/bw_sbfl-201.jpg'
+        },
+        {
             name: 'Home',
             path: 'img/photography/home_credit-Brennan-White-Codetta-South.jpeg'
         },
@@ -170,6 +194,19 @@ app.controller('MainCtrl', function ($scope, $rootScope, $sce, $route) {
         }
     ]
 
+    function shuffle(list) {
+        var m = list.length, t, i;
+
+        while (m) {
+            i = Math.floor(Math.random() * m--);
+            t = list[m];
+            list[m] = list[i];
+            list[i] = t;
+        }
+
+        return list;
+    }
+
     function sliceIntoChunks(arr, chunkSize) {
         const res = [];
         for (let i = 0; i < arr.length; i += chunkSize) {
@@ -179,7 +216,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $sce, $route) {
         return res;
     }
 
-    $scope.photoGalleryGroups = sliceIntoChunks($scope.photoGallery, 3)
+    $scope.photoGalleryGroups = sliceIntoChunks(shuffle($scope.photoGallery), 5)
 
     const lightbox = document.getElementById('lightbox');
     if (lightbox) {
